@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #222;
+}
+
+
+/* Header */
+
+.header {
+    width: 100%;
+    background: #111827;
+    color: white;
+    padding: 20px 0;
+}
+
+.header-content {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #60a5fa;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 5px;
+
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #60a5fa;
+}
+
+
+/* Hero */
+
+.hero {
+    width: 100%;
+    padding: 70px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: white;
+}
+
+.hero-content {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+
+/* Users section */
+
+.users-section {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+.user-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+
+/* User card */
+
+#wrap-users {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.user {
+    background: white;
+    padding: 20px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.user:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Profile */
+
+.user-profile-wrap {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-profile {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    background: #e5e7eb;
+}
+
+.user-profile-description {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.user-profile-name {
+    font-size: 20px;
+}
+
+.user-age {
+    font-size: 14px;
+
+    background: #2563eb;
+    color: white;
+
+    padding: 4px 8px;
+
+    border-radius: 20px;
+}
+
+.user-explanations {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+
+/* Buttons */
+
+.delete-user-btn,
+.edit-user-btn {
+    border: none;
+    padding: 9px 15px;
+
+    border-radius: 7px;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.delete-user-btn {
+    background: #ef4444;
+}
+
+.delete-user-btn:hover {
+    background: #dc2626;
+}
+
+.edit-user-btn {
+    background: #2563eb;
+    margin-left: 5px;
+}
+
+.edit-user-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .user {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .user button {
+        margin-left: 0;
+        margin-right: 5px;
+    }
+
+}
