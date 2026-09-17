@@ -11,6 +11,86 @@ body {
 }
 
 
+
+/* =========================
+Modal
+========================= */
+
+.modal-container {
+position: fixed;
+inset: 0;
+
+background: rgba(0, 0, 0, 0.6);
+
+display: none;
+align-items: center;
+justify-content: center;
+
+z-index: 1000;
+
+}
+
+.modal-container.visible {
+display: flex;
+}
+
+.modal-content {
+width: 90%;
+max-width: 450px;
+
+background: white;
+padding: 30px;
+
+border-radius: 12px;
+
+text-align: center;
+
+box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+
+}
+
+.modal-title {
+font-size: 22px;
+margin-bottom: 25px;
+line-height: 1.5;
+}
+
+.btn-groups {
+display: flex;
+justify-content: center;
+gap: 15px;
+}
+
+.unaccept-btn,
+.accept-btn {
+border: none;
+padding: 10px 25px;
+
+border-radius: 7px;
+
+color: white;
+cursor: pointer;
+
+font-size: 15px;
+
+}
+
+.unaccept-btn {
+background: #6b7280;
+}
+
+.unaccept-btn:hover {
+background: #4b5563;
+}
+
+.accept-btn {
+background: #ef4444;
+}
+
+.accept-btn:hover {
+background: #dc2626;
+}
+
 /* Header */
 
 .header {
