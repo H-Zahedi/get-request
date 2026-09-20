@@ -1,79 +1,161 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========================
+RESET
+========================= */
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
-
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
-    color: #222;
-}
-
-
 
 /* =========================
-Modal
+BODY
+========================= */
+
+body {
+font-family: Arial, sans-serif;
+
+background: #f4f6f9;
+
+color: #222;
+
+min-height: 100vh;
+
+
+}
+
+/* =========================
+MODAL
 ========================= */
 
 .modal-container {
 position: fixed;
+
 inset: 0;
 
 background: rgba(0, 0, 0, 0.6);
 
 display: none;
+
 align-items: center;
+
 justify-content: center;
 
 z-index: 1000;
 
+padding: 20px;
+
+
 }
+
+/* وقتی modal باز می‌شود */
 
 .modal-container.visible {
 display: flex;
 }
 
+/* محتوای modal */
+
 .modal-content {
-width: 90%;
+width: 100%;
+
 max-width: 450px;
 
 background: white;
+
 padding: 30px;
 
 border-radius: 12px;
 
 text-align: center;
 
-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.2);
+
+animation: modalAnimation 0.2s ease;
+
 
 }
+
+/* Animation */
+
+@keyframes modalAnimation {
+
+from {
+    opacity: 0;
+
+    transform: translateY(-20px);
+}
+
+to {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+}
+
+/* عنوان modal */
 
 .modal-title {
 font-size: 22px;
+
 margin-bottom: 25px;
+
 line-height: 1.5;
+
+
 }
+
+/* =========================
+BUTTON GROUP
+========================= */
 
 .btn-groups {
 display: flex;
+
 justify-content: center;
+
+align-items: center;
+
 gap: 15px;
+
+margin-top: 20px;
+
+flex-wrap: wrap;
+
+
 }
 
+/* =========================
+ALL MODAL BUTTONS
+========================= */
+
 .unaccept-btn,
-.accept-btn {
+.accept-btn,
+.update-btn {
+
 border: none;
-padding: 10px 25px;
+
+padding: 10px 20px;
 
 border-radius: 7px;
 
 color: white;
+
 cursor: pointer;
 
 font-size: 15px;
 
+transition: 0.3s;
+
+
 }
+
+/* =========================
+CANCEL BUTTON
+========================= */
 
 .unaccept-btn {
 background: #6b7280;
@@ -83,6 +165,10 @@ background: #6b7280;
 background: #4b5563;
 }
 
+/* =========================
+DELETE BUTTON
+========================= */
+
 .accept-btn {
 background: #ef4444;
 }
@@ -91,232 +177,699 @@ background: #ef4444;
 background: #dc2626;
 }
 
-/* Header */
+/* =========================
+UPDATE BUTTON
+========================= */
+
+.update-btn {
+background: #2563eb;
+}
+
+.update-btn:hover {
+background: #1d4ed8;
+}
+
+/* =========================
+EDIT FORM
+========================= */
+
+.edit-user-form {
+width: 100%;
+}
+
+/* =========================
+INPUT FIELD
+========================= */
+
+.input-field {
+width: 100%;
+
+margin-bottom: 15px;
+
+
+}
+
+/* =========================
+INPUT
+========================= */
+
+.input-field input {
+
+width: 100%;
+
+padding: 12px 15px;
+
+border: 1px solid #d1d5db;
+
+border-radius: 7px;
+
+outline: none;
+
+font-size: 15px;
+
+color: #222;
+
+background: white;
+
+transition: 0.3s;
+
+
+}
+
+/* Input focus */
+
+.input-field input:focus {
+
+border-color: #2563eb;
+
+box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+
+
+}
+
+/* =========================
+HEADER
+========================= */
 
 .header {
-    width: 100%;
-    background: #111827;
-    color: white;
-    padding: 20px 0;
+
+width: 100%;
+
+background: #111827;
+
+color: white;
+
+padding: 20px 0;
+
+
 }
 
-.header-content {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
+/* Header container */
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.header-container {
+
+width: 90%;
+
+max-width: 1100px;
+
+margin: 0 auto;
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+
 }
+
+/* =========================
+LOGO
+========================= */
 
 .logo h2 {
-    margin: 0;
-    font-size: 24px;
-    color: #60a5fa;
+
+margin: 0;
+
+font-size: 24px;
+
+color: #60a5fa;
+
+
 }
 
+/* =========================
+NAVBAR
+========================= */
+
 .navbar {
-    display: flex;
-    align-items: center;
-    gap: 35px;
+
+display: flex;
+
+align-items: center;
+
+gap: 35px;
+
+
 }
 
 .navbar a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 8px 5px;
 
-    transition: 0.3s;
+color: white;
+
+text-decoration: none;
+
+font-size: 16px;
+
+padding: 8px 5px;
+
+transition: 0.3s;
+
+
 }
 
 .navbar a:hover {
-    color: #60a5fa;
+
+color: #60a5fa;
+
+
 }
 
-
-/* Hero */
+/* =========================
+HERO
+========================= */
 
 .hero {
-    width: 100%;
-    padding: 70px 20px;
 
-    background: linear-gradient(
+width: 100%;
+
+padding: 70px 20px;
+
+background:
+    linear-gradient(
         135deg,
         #2563eb,
         #7c3aed
     );
 
-    color: white;
+color: white;
+
+
 }
+
+/* Hero content */
 
 .hero-content {
-    max-width: 1100px;
-    margin: auto;
-    text-align: center;
+
+max-width: 1100px;
+
+margin: auto;
+
+text-align: center;
+
+
 }
+
+/* Hero title */
 
 .hero-content h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
+
+font-size: 42px;
+
+margin-bottom: 15px;
+
+
 }
+
+/* Hero paragraph */
 
 .hero-content p {
-    font-size: 18px;
-    opacity: 0.9;
+
+font-size: 18px;
+
+opacity: 0.9;
+
+
 }
 
-
-/* Users section */
+/* =========================
+USERS SECTION
+========================= */
 
 .users-section {
-    width: 90%;
-    max-width: 900px;
-    margin: 50px auto;
+
+width: 90%;
+
+max-width: 900px;
+
+margin: 50px auto;
+
+
 }
+
+/* Users title */
 
 .user-title {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 30px;
+
+text-align: center;
+
+margin-bottom: 30px;
+
+font-size: 30px;
+
+
 }
 
+/* =========================
+LOADING
+========================= */
 
-/* User card */
+#loading {
+
+text-align: center;
+
+font-size: 18px;
+
+color: #6b7280;
+
+margin-bottom: 20px;
+
+
+}
+
+/* =========================
+ERROR
+========================= */
+
+#error-message {
+
+text-align: center;
+
+color: #ef4444;
+
+font-size: 15px;
+
+margin-bottom: 20px;
+
+
+}
+
+/* =========================
+USERS CONTAINER
+========================= */
 
 #wrap-users {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+
+display: flex;
+
+flex-direction: column;
+
+gap: 20px;
+
+
 }
+
+/* =========================
+USER CARD
+========================= */
 
 .user {
-    background: white;
-    padding: 20px;
 
-    border-radius: 12px;
+background: white;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+padding: 20px;
 
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+border-radius: 12px;
 
-    transition: 0.3s;
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+gap: 20px;
+
+box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.08);
+
+transition: 0.3s;
+
+
 }
+
+/* Card hover */
 
 .user:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+transform: translateY(-3px);
+
+box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.12);
+
+
 }
 
-
-/* Profile */
+/* =========================
+USER PROFILE WRAPPER
+========================= */
 
 .user-profile-wrap {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+
+display: flex;
+
+align-items: center;
+
+gap: 15px;
+
+min-width: 0;
+
+
 }
+
+/* =========================
+PROFILE IMAGE
+========================= */
 
 .user-profile {
-    width: 65px;
-    height: 65px;
 
-    border-radius: 50%;
+width: 65px;
 
-    object-fit: cover;
+height: 65px;
 
-    background: #e5e7eb;
+border-radius: 50%;
+
+object-fit: cover;
+
+background: #e5e7eb;
+
+flex-shrink: 0;
+
+
 }
+
+/* =========================
+USER DESCRIPTION
+========================= */
 
 .user-profile-description {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
+
+display: flex;
+
+flex-direction: column;
+
+gap: 7px;
+
+min-width: 0;
+
+
 }
+
+/* =========================
+USER NAME
+========================= */
 
 .user-profile-name {
-    font-size: 20px;
+
+font-size: 20px;
+
+color: #111827;
+
+word-break: break-word;
+
+
 }
+
+/* =========================
+USER AGE
+========================= */
 
 .user-age {
-    font-size: 14px;
 
-    background: #2563eb;
-    color: white;
+font-size: 13px;
 
-    padding: 4px 8px;
+background: #2563eb;
 
-    border-radius: 20px;
+color: white;
+
+padding: 4px 8px;
+
+border-radius: 20px;
+
+display: inline-block;
+
+margin-left: 5px;
+
+
 }
+
+/* =========================
+USER PASSWORD
+========================= */
 
 .user-explanations {
-    font-size: 14px;
-    color: #6b7280;
+
+font-size: 14px;
+
+color: #6b7280;
+
+word-break: break-word;
+
+
 }
 
+/* =========================
+USER BUTTONS
+========================= */
 
-/* Buttons */
+.user-buttons {
 
-.delete-user-btn,
-.edit-user-btn {
-    border: none;
-    padding: 9px 15px;
+display: flex;
 
-    border-radius: 7px;
+align-items: center;
 
-    color: white;
+flex-shrink: 0;
 
-    cursor: pointer;
 
-    font-size: 14px;
-
-    transition: 0.3s;
 }
+
+/* =========================
+DELETE USER BUTTON
+========================= */
 
 .delete-user-btn {
-    background: #ef4444;
+
+border: none;
+
+padding: 9px 15px;
+
+border-radius: 7px;
+
+color: white;
+
+background: #ef4444;
+
+cursor: pointer;
+
+font-size: 14px;
+
+transition: 0.3s;
+
+
 }
 
 .delete-user-btn:hover {
-    background: #dc2626;
+
+background: #dc2626;
+
+
 }
 
+/* =========================
+EDIT USER BUTTON
+========================= */
+
 .edit-user-btn {
-    background: #2563eb;
-    margin-left: 5px;
+
+border: none;
+
+padding: 9px 15px;
+
+border-radius: 7px;
+
+color: white;
+
+background: #2563eb;
+
+cursor: pointer;
+
+font-size: 14px;
+
+margin-left: 5px;
+
+transition: 0.3s;
+
+
 }
 
 .edit-user-btn:hover {
-    background: #1d4ed8;
+
+background: #1d4ed8;
+
+
+}
+
+/* =========================
+BUTTON ACTIVE
+========================= */
+
+.delete-user-btn:active,
+.edit-user-btn:active,
+.accept-btn:active,
+.update-btn:active,
+.unaccept-btn:active {
+
+transform: scale(0.97);
+
+
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+.header-container {
+
+    flex-direction: column;
+
+    gap: 15px;
+
 }
 
 
-/* Responsive */
+.navbar {
 
-@media (max-width: 600px) {
+    gap: 20px;
 
-    .header-content {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 0;
-    }
+}
 
-    .hero-content h1 {
-        font-size: 30px;
-    }
 
-    .user {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
+.hero {
 
-    .user button {
-        margin-left: 0;
-        margin-right: 5px;
-    }
+    padding: 50px 20px;
+
+}
+
+
+.hero-content h1 {
+
+    font-size: 30px;
+
+}
+
+
+.hero-content p {
+
+    font-size: 16px;
+
+}
+
+
+.users-section {
+
+    width: 92%;
+
+    margin-top: 35px;
+
+}
+
+
+.user {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+.user-buttons {
+
+    width: 100%;
+
+}
+
+
+.delete-user-btn,
+.edit-user-btn {
+
+    margin-top: 5px;
+
+}
+
+
+}
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+.navbar {
+
+    gap: 12px;
+
+}
+
+
+.navbar a {
+
+    font-size: 14px;
+
+}
+
+
+.hero-content h1 {
+
+    font-size: 26px;
+
+}
+
+
+.user {
+
+    padding: 15px;
+
+}
+
+
+.user-profile {
+
+    width: 55px;
+
+    height: 55px;
+
+}
+
+
+.user-profile-name {
+
+    font-size: 17px;
+
+}
+
+
+.modal-content {
+
+    padding: 20px;
+
+}
+
+
+.modal-title {
+
+    font-size: 19px;
+
+}
+
+
+.btn-groups {
+
+    flex-direction: column;
+
+    width: 100%;
+
+}
+
+
+.btn-groups button {
+
+    width: 100%;
+
+}
+
 
 }

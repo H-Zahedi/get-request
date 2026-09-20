@@ -1,74 +1,273 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Get-Request.css">
-    <title>Get Request</title>
-</head>
+<!DOCTYPE html> <html lang="en"> <head>
+<meta charset="UTF-8">
 
-<body>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
+<link
+    rel="stylesheet"
+    href="/Get-Request.css"
+>
 
-    <div class="modal-container" id="delete-modal">
+<title>Users Management</title>
+
+</head> <body>
+<!-- =========================
+     DELETE MODAL
+========================== -->
+
+<div
+    class="modal-container"
+    id="delete-modal"
+>
+
     <div class="modal-content">
+
         <h1 class="modal-title">
             Are you sure you want to delete this user?
         </h1>
 
+
         <div class="btn-groups">
-            <button class="unaccept-btn" onclick="closeModal()">
+
+            <button
+                type="button"
+                class="unaccept-btn"
+                onclick="closeDeleteModal()"
+            >
                 No
             </button>
 
-            <button class="accept-btn" onclick="deleteUser()">
+
+            <button
+                type="button"
+                class="accept-btn"
+                onclick="deleteUser()"
+            >
                 Yes
             </button>
+
         </div>
+
     </div>
+
 </div>
 
-    <header class="header">
-        <div class="header-container">
 
-            <div class="logo">
-                <h2>Users</h2>
+
+<!-- =========================
+     EDIT MODAL
+========================== -->
+
+<div
+    class="modal-container"
+    id="edit-modal"
+>
+
+    <div class="modal-content">
+
+        <h1 class="modal-title">
+            Edit User Information
+        </h1>
+
+
+        <form
+            id="edit-user-form"
+            class="edit-user-form"
+        >
+
+
+            <!-- FIRSTNAME -->
+
+            <div class="input-field">
+
+                <input
+                    type="text"
+                    id="firstname"
+                    placeholder="Your firstname"
+                    spellcheck="false"
+                    required
+                >
+
             </div>
 
-            <nav class="navbar">
-                <a href="#">Home</a>
-                <a href="#">Users</a>
-                <a href="#">About</a>
-            </nav>
+
+            <!-- LASTNAME -->
+
+            <div class="input-field">
+
+                <input
+                    type="text"
+                    id="lastname"
+                    placeholder="Your lastname"
+                    spellcheck="false"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="input-field">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Your password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="btn-groups">
+
+                <button
+                    type="button"
+                    class="unaccept-btn"
+                    onclick="closeEditModal()"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="update-btn"
+                >
+                    Update Information
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header class="header">
+
+    <div class="header-container">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <h2>
+                Users
+            </h2>
 
         </div>
-    </header>
 
-    <main>
 
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Users Management</h1>
-                <p>
-                    Manage and view all users fetched from the server.
-                </p>
-            </div>
-        </section>
+        <!-- NAVBAR -->
 
-        <section class="users-section">
+        <nav class="navbar">
 
-            <h1 class="user-title">
-                All users that you fetched
+            <a href="#">
+                Home
+            </a>
+
+            <a href="#">
+                Users
+            </a>
+
+            <a href="#">
+                About
+            </a>
+
+        </nav>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN
+========================== -->
+
+<main>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Users Management
             </h1>
 
-            <div id="wrap-users">
+            <p>
+                Manage and view all users fetched from the server.
+            </p>
 
-            </div>
+        </div>
 
-        </section>
+    </section>
 
-    </main>
 
-    <script src="/Get-Request.js"></script>
-</body>
-</html>
+
+    <!-- =========================
+         USERS SECTION
+    ========================== -->
+
+    <section class="users-section">
+
+
+        <h1 class="user-title">
+            All Users
+        </h1>
+
+
+        <!-- LOADING -->
+
+        <div id="loading">
+            Loading users...
+        </div>
+
+
+        <!-- ERROR -->
+
+        <div id="error-message"></div>
+
+
+        <!-- USERS -->
+
+        <div id="wrap-users"></div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script src="/Get-Request.js"></script>
+
+</body> </html>
